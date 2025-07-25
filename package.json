@@ -1,0 +1,26 @@
+{
+  "name": "focusguard",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.mjs",
+  "scripts": {
+    "start": "concurrently \"npm run electron\" \"npm run react\"",
+    "electron": "set ELECTRON_START_URL=http://localhost:3000 && wait-on http://localhost:3000 && electron electron/main.mjs",
+    "react": "cd ui && npm start"
+  },
+  "dependencies": {
+    "active-win": "^9.0.0",
+    "axios": "^1.9.0",
+    "chart.js": "^4.5.0",
+    "electron": "^29.0.0",
+    "get-windows": "^9.2.0",
+    "react-chartjs-2": "^5.3.0",
+    "wait-on": "^7.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.7"
+  }
+}
